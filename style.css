@@ -27,13 +27,13 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 20rem;
   min-height: 100vh;
 }
 
 
 #app {
-  max-width: 1280px;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -113,6 +113,25 @@ li {
   margin: 0.5em 0;
 }
 
+.card {
+  background-color: #f0f0f0;
+  padding: 0.625rem;
+  margin: 0.625rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0rem 0rem 0.1rem #2e2e2e;
+}
 
+.card:hover {
+  transform: scale(1.1);
+}
+
+.hidden-content {
+  display: none;
+}
+
+.card.active .hidden-content {
+  display: block;
+}
 
 
