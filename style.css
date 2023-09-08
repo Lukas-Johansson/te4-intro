@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #373552;
-  background-color: #EDE2D6;
+  color: #fcfcfc;
+  background-color: #292929;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -100,18 +100,53 @@ li {
 }
 
 .card {
-  background-color: #c4baae;
   padding: 0.625rem;
-  margin: 0.625rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0rem 0rem 0.1rem #2e2e2e;
-  border-radius: 0.625rem;
-  border: 0.0625rem solid #2e2e2e;
+  margin: 1rem;
+
+  --border-width: 3px;
+
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #383838;
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .card:hover {
   transform: scale(1.1);
+  transition: transform 0.25s;
 }
 
 .hidden-content {
@@ -155,6 +190,6 @@ li {
   margin-right: 0.5em; 
 }
 
-  
+
 
 
