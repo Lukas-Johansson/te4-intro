@@ -1,17 +1,4 @@
- export function test(element) {
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const cards = document.querySelectorAll('.card');
-        const cardContainer = document.querySelectorAll('.cardholder');
-    
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                // Toggle the 'active' class to show/hide the hidden content
-                card.classList.toggle('active');
-            });
-        });
-    });
-
+export function test(element) {
     document.addEventListener('DOMContentLoaded', function () {
         const quizNextButton = document.getElementById('quiz-next');
         const quizFeedback = document.querySelector('.quiz-feedback');
