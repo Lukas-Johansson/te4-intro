@@ -1,6 +1,8 @@
  export function test(element) {
+
     document.addEventListener('DOMContentLoaded', function () {
         const cards = document.querySelectorAll('.card');
+        const cardContainer = document.querySelectorAll('.cardholder');
     
         cards.forEach(card => {
             card.addEventListener('click', () => {
@@ -70,11 +72,10 @@
                     } else if (currentQuestion === 2 && selectedLabel.trim() === 'HTML och CSS') {
                         correctAnswers++;
                     }
+                    
                 }
             });
         });
     });
-
-}
-
+};
 
