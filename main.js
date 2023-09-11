@@ -188,7 +188,7 @@ document.querySelector('#app').innerHTML = `
             </div>
 
             <p class="quiz-feedback"></p>
-            <button id="quiz-next">Nästa fråga</button>
+            <button id="quiz-next">Nästa fråga</button> 
         </div>
 
 
