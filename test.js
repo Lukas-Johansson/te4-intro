@@ -16,40 +16,41 @@
         const quizQuestions = document.querySelectorAll('.quiz-question-container');
         const quizRadios = document.querySelectorAll('.quiz-radio');
     
-        // Keep track of score ye cunt
+        // Keeps track of the score
+
         let currentQuestion = 0;
         let correctAnswers = 0;
     
-        // Should hide all of the questions atleast the one not showind D)
+        // Hides all of the other questions
         quizQuestions.forEach((question, index) => {
             if (index !== 0) {
                 question.style.display = 'none';
             }
         });
     
-        // Makes sure it goes to the next question so no stucky :))))))))
+        // Makes sure it goes to the next question 
         quizNextButton.addEventListener('click', function () {
             if (currentQuestion < quizQuestions.length - 1) {
                 //Hide last question so it doesn't stack 
                 quizQuestions[currentQuestion].style.display = 'none';
     
-                // Questions are on funny index so make it go up to show newxt question hihi
+                // Questions are on a index so it makes it go up to show next question
                 currentQuestion++;
     
                 // Shows next question with cool css
                 quizQuestions[currentQuestion].style.display = 'block';
     
-                // restorse awnser so you no go same awnser cuz of bordem
+                // Clears awnser so can put in a new one for the new question
                 quizFeedback.textContent = '';
                 quizFeedback.style.display = 'none';
     
-                // all radio buttons no filled in anymore hiih
+                // Clears all radio buttons
                 quizRadios.forEach(radio => {
                     radio.checked = false;
                 });
 
             } else {
-                //in case all of questions are awnsers so we not stucky in loopy of questions or no feedback
+                //Prints how many correct questions 
                 quizFeedback.textContent = `Du hade ${correctAnswers} av ${quizQuestions.length} rätt svar.`;
                 quizFeedback.style.color = 'green';
                 quizFeedback.style.display = 'block';
@@ -57,7 +58,7 @@
             }
         });
     
-        // checks for correct awnser ye cheating bastard
+        // Checks if the awnser is correct
         quizRadios.forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
