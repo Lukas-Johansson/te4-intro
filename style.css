@@ -40,11 +40,7 @@ body {
 
 .card {
   padding: 2em;
-  transition: transform 0.2s;
-}
-
-.read-the-docs {
-  color: #888;
+  transition: transform 0.1s;
 }
 
 button {
@@ -54,29 +50,43 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #000000;
-  cursor: pointer;
-  transition: border-color 0.25s; 
+  transition: transform 0.2s;
+  --border-width: 3px;
+
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #383838;
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  transform: scale(1.05);
+  transition: transform 0.1s;
 }
 
 .cvtext {
@@ -154,9 +164,6 @@ li {
 }
 
 @media screen and (max-width:600px) {
-  .card {
-    width: 100%;
-  }
 
   .card.active .hidden-content {
     display: block;
@@ -170,10 +177,10 @@ li {
     transform: none;
   }
 
-  .card {
-    margin: 0.625rem;
+  .cvtext {
+    font-size: 1em;
+    text-align: center;
   }
-
 }
 
 .quiz-question-container li {
