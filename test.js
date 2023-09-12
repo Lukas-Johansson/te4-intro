@@ -57,8 +57,13 @@ export function test(element) {
                         correctAnswers++;
                     } else if (currentQuestion === 2 && selectedLabel.trim() === 'HTML och CSS') {
                         correctAnswers++;
+                    } else if (currentQuestion === 3 && selectedLabel.trim() === 'JavaScript') {
+                        correctAnswers++;
+                    } else if (currentQuestion === 4 && selectedLabel.trim() === 'JavaScript') {
+                        correctAnswers++;
+                    } else if (currentQuestion === 5 && selectedLabel.trim() === 'JavaScript') {
+                        correctAnswers++;
                     }
-                    
                 }
             });
         });
