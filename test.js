@@ -43,9 +43,8 @@ export function test(element) {
                 quizFeedback.textContent = `Du hade ${correctAnswers} av ${quizQuestions.length} rätt svar.`;
                 quizFeedback.style.color = 'green';
                 quizFeedback.style.display = 'block';
-                quizNextButton.style.display = 'none';
-            }
-        });
+                quizNextButton.style.display = 'none';6
+        };
     
         // Checks if the awnser is correct
         quizRadios.forEach(radio => {
@@ -64,5 +63,5 @@ export function test(element) {
             });
         });
     });
-};
 
+})};
