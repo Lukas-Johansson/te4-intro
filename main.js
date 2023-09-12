@@ -24,7 +24,7 @@ document.querySelector('#app').innerHTML = `
                 <div class="card" id="education-card">
                     <h2>Kapitel 1: Skolans Värld</h2>
                     <p>
-                        Gymnasium: Teknikinriktning, Gymnasieskolan XYZ (År - År)
+                        Gymnasium: Teknikinriktning, Gymnasieskolan NTI (2020 - 2023)
                         Kurser inom webbutveckling, programmering och säkerhet
                         Utförde ett gymnasiearbete om Cross-Site Scripting (XSS) och dess potentiella faror
                     </p>
@@ -123,7 +123,7 @@ document.querySelector('#app').innerHTML = `
                     <h2>Kapitel 4: Webbprojekt</h2>
 
                     <p>
-                        Gymnasiearbete om Cross-Site Scripting (XSS) (År)
+                        Gymnasiearbete om Cross-Site Scripting (XSS) (2023)
                         Genomförde en noggrann undersökning av XSS och dess påverkan på webbapplikationer
                         Skapade praktiska exempel och metoder för att förebygga och hantera XSS-attacker
                         Presenterade resultatet för skolan och diskuterade vikten av webbsäkerhet
