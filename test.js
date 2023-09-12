@@ -4,66 +4,82 @@ export function test(element) {
         const quizFeedback = document.querySelector('.quiz-feedback');
         const quizQuestions = document.querySelectorAll('.quiz-question-container');
         const quizRadios = document.querySelectorAll('.quiz-radio');
-    
-        // Keeps track of the score
 
+        // Keeps track of the score
         let currentQuestion = 0;
         let correctAnswers = 0;
-    
-        // Hides all of the other questions
+
+        // Hides all questions except the first one
         quizQuestions.forEach((question, index) => {
             if (index !== 0) {
                 question.style.display = 'none';
             }
         });
-    
-        // Makes sure it goes to the next question 
-        quizNextButton.addEventListener('click', function () {
+
+        // Function to show the next question
+        function showNextQuestion() {
             if (currentQuestion < quizQuestions.length - 1) {
-                //Hide last question so it doesn't stack 
+                // Hide the current question
                 quizQuestions[currentQuestion].style.display = 'none';
-    
-                // Questions are on a index so it makes it go up to show next question
+                // Move to the next question and show it
                 currentQuestion++;
-    
-                // Shows next question with cool css
                 quizQuestions[currentQuestion].style.display = 'block';
-    
-                // Clears awnser so can put in a new one for the new question
+                // Clear answer feedback
                 quizFeedback.textContent = '';
                 quizFeedback.style.display = 'none';
-    
-                // Clears all radio buttons
+                // Clear all radio buttons
                 quizRadios.forEach(radio => {
                     radio.checked = false;
                 });
-
             } else {
-                //Prints how many correct questions 
-                quizFeedback.textContent = `Du hade ${correctAnswers} av ${quizQuestions.length} rätt svar.`;
+                // Print the final score
+                quizFeedback.textContent = `You got ${correctAnswers} out of ${quizQuestions.length} correct answers.`;
                 quizFeedback.style.color = 'green';
                 quizFeedback.style.display = 'block';
                 quizNextButton.style.display = 'none';
-        };
-    
-        // Checks if the awnser is correct
+            }
+        }
+
+        // Add an event listener to the "Next" button
+        quizNextButton.addEventListener('click', showNextQuestion);
+
+        // Check if the answer is correct
         quizRadios.forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     const selectedLabel = this.nextElementSibling.textContent;
-                    if (currentQuestion === 0 && selectedLabel.trim() === 'Teknikinriktning') {
-                        correctAnswers++;
-                    } else if (currentQuestion === 1 && selectedLabel.trim() === 'Han bidrog till utvecklingen av responsiva webbsidor och användargränssnitt') {
-                        correctAnswers++;
-                    } else if (currentQuestion === 2 && selectedLabel.trim() === 'Lukas har erfarenhet av HTML, CSS och JavaScript') {
-                        correctAnswers++;
-                    } else if (currentQuestion === 3 && selectedLabel.trim() === 'Cross-Site Scripting (XSS)') {
-                        correctAnswers++;
-                    } else if (currentQuestion === 4 && selectedLabel.trim() === 'Lukas är en dedikerad webutvecklare med ett brinnande intresse för säkerhetsaspekterna av webbutveckling') {
-                        correctAnswers++;   
+                    // Check the selected answer based on the current question
+                    switch (currentQuestion) {
+                        case 0:
+                            if (selectedLabel.trim() === 'Teknikinriktning') {
+                                correctAnswers++;
+                            }
+                            break;
+                        case 1:
+                            if (selectedLabel.trim() === 'Han bidrog till utvecklingen av responsiva webbsidor och användargränssnitt') {
+                                correctAnswers++;
+                            }
+                            break;
+                        case 2:
+                            if (selectedLabel.trim() === 'Lukas har erfarenhet av HTML, CSS och JavaScript') {
+                                correctAnswers++;
+                            }
+                            break;
+                        case 3:
+                            if (selectedLabel.trim() === 'Cross-Site Scripting (XSS)') {
+                                correctAnswers++;
+                            }
+                            break;
+                        case 4:
+                            if (selectedLabel.trim() === 'Lukas är en dedikerad webutvecklare med ett brinnande intresse för säkerhetsaspekterna av webbutveckling') {
+                                correctAnswers++;
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 }
             });
         });
     });
-})};
+}
