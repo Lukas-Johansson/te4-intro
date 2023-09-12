@@ -43,7 +43,7 @@ export function test(element) {
                 quizFeedback.textContent = `Du hade ${correctAnswers} av ${quizQuestions.length} rätt svar.`;
                 quizFeedback.style.color = 'green';
                 quizFeedback.style.display = 'block';
-                quizNextButton.style.display = 'none';6
+                quizNextButton.style.display = 'none';
         };
     
         // Checks if the awnser is correct
@@ -53,16 +53,14 @@ export function test(element) {
                     const selectedLabel = this.nextElementSibling.textContent;
                     if (currentQuestion === 0 && selectedLabel.trim() === 'Teknikinriktning') {
                         correctAnswers++;
-                    } else if (currentQuestion === 1 && selectedLabel.trim() === 'Cross-Site Scripting (XSS)') {
+                    } else if (currentQuestion === 1 && selectedLabel.trim() === 'Han bidrog till utvecklingen av responsiva webbsidor och användargränssnitt') {
                         correctAnswers++;
-                    } else if (currentQuestion === 2 && selectedLabel.trim() === 'HTML och CSS') {
+                    } else if (currentQuestion === 2 && selectedLabel.trim() === 'Lukas har erfarenhet av HTML, CSS och JavaScript') {
                         correctAnswers++;
-                    } else if (currentQuestion === 3 && selectedLabel.trim() === 'JavaScript') {
+                    } else if (currentQuestion === 3 && selectedLabel.trim() === 'Cross-Site Scripting (XSS)') {
                         correctAnswers++;
-                    } else if (currentQuestion === 4 && selectedLabel.trim() === 'JavaScript') {
-                        correctAnswers++;
-                    } else if (currentQuestion === 5 && selectedLabel.trim() === 'JavaScript') {
-                        correctAnswers++;
+                    } else if (currentQuestion === 4 && selectedLabel.trim() === 'Lukas är en dedikerad webutvecklare med ett brinnande intresse för säkerhetsaspekterna av webbutveckling') {
+                        correctAnswers++;   
                     }
                 }
             });
