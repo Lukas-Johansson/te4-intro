@@ -33,7 +33,7 @@ export function test(element) {
                 });
             } else {
                 // Print the final score
-                quizFeedback.textContent = `You got ${correctAnswers} out of ${quizQuestions.length} correct answers.`;
+                quizFeedback.textContent = `Du fick ${correctAnswers} av ${quizQuestions.length} korrekta svar.`;
                 quizFeedback.style.color = 'green';
                 quizFeedback.style.display = 'block';
                 quizNextButton.style.display = 'none';

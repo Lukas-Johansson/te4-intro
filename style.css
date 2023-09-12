@@ -32,8 +32,8 @@ body {
 }
 
 #app {
-  max-width: 80rem;
-  margin: 0 auto;
+  width:min(80ch, 100vw - 2rem);
+  margin-inline: auto;
   padding: 2rem;
   text-align: center;
 }
